@@ -77,7 +77,7 @@ const refreshToken = async (req, res) => {
     }
 
     try {
-        const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
+        const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET || 'kaku');
         const user = await userModel.findById(decoded._id);
         const newAccessToken = user.generateAuthToken();
 

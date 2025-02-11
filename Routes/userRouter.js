@@ -20,8 +20,8 @@ router.post('/login', loginLimiter, [
 
 router.get('/logout', authMiddleware.authUser, userController.logoutUser)
 router.post('/refresh-token', userController.refreshToken)
-router.post('/verify-email/:token', userController.verifyEmail)
-router.post('/forgot-password', userController.forgotPassword)
-router.post('/reset-password/:token', userController.resetPassword)
+// router.post('/verify-email/:token', userController.verifyEmail)
+// router.post('/forgot-password', userController.forgotPassword)
+// router.post('/reset-password/:token', userController.resetPassword)
 
 export default router;
